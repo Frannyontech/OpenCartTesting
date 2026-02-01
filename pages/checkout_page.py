@@ -28,7 +28,7 @@ class HomePage_CheckoutPage(BasePage):
         "checkbox_metodo_pago": (By.XPATH, '//*[@id="collapse-payment-method"]/div/div[3]/div/input[1]'),
         "btn_continuar_pago": (By.ID, 'button-payment-method'),
         "btn_confirmar_orden": (By.ID, 'button-confirm'),
-        "txt_exitoso": (By.XPATH, '//*[@id="content"]/h1'),#content > h1
+        "txt_exitoso": (By.XPATH, '//*[@id="content"]/h1'),
         "btn_continuar": (By.CLASS_NAME, 'btn-primary')
     }
 

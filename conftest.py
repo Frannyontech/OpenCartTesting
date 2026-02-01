@@ -14,7 +14,7 @@ def base_url():
 #usando este fixture evita hardcodear la url
 
 @pytest.fixture
-def driver():
+def driver(request):
     options = Options()
     options.add_argument("--start-maximized")
     options.add_argument("--ignore-certificate-errors")
@@ -24,7 +24,8 @@ def driver():
     yield driver
 
     os.makedirs("screenshots", exist_ok=True)
+    test_name = request.node.name
     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-    driver.save_screenshot(f"screenshots/final_{timestamp}.png")
+    driver.save_screenshot(f"screenshots/{test_name}_{timestamp}.png")
 
     driver.quit()
