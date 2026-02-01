@@ -28,7 +28,7 @@ Se automatizaron **tres flujos relevantes**, representativos del comportamiento 
    - Confirmación de la orden
    - Captura de evidencia (screenshot)
 
-Estos flujos permiten validar navegación, formularios, selects dinámicos, botones y confirmaciones, cubriendo gran parte del comportamiento del usuario.
+Estos flujos representan el camino crítico de un negocio ecommerce
 
 ---
 
