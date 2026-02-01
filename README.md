@@ -43,16 +43,16 @@ El proyecto está organizado siguiendo **POM**, separando responsabilidades:
 
 ---
 
-## Ejecución del proyecto
-
-```bash
-pip install -r requirements.txt
-pytest -v
-
----
-
 ## Próximas etapas
 
 Como siguiente paso, se contempla la incorporación de **Gherkin con Cucumber (pytest-bdd)** para definir los escenarios de prueba en un lenguaje más legible y orientado al negocio, facilitando la escalabilidad del proyecto y la colaboración entre perfiles técnicos y no técnicos.
 
 Adicionalmente, se evaluará la incorporación de mejoras como separación de datos de prueba, reportes automatizados y ejecución en pipelines de integración continua (CI/CD).
+
+---
+
+## Ejecución del proyecto
+
+```bash
+pip install -r requirements.txt
+pytest -v
