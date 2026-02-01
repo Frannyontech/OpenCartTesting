@@ -13,18 +13,6 @@ def test_buscar_producto(base_url, driver):
 
     driver.get(base_url)
     home_page_nuevo = HomePage_SearchPage(driver)
-
-    options = Options()
-    options.add_argument("--start-maximized")
-    options.add_argument("--ignore-certificate-errors")
-    options.add_argument("--ignore-ssl-errors=yes")
-
-    driver = webdriver.Chrome(
-        service=Service(ChromeDriverManager().install()),
-        options=options
-    )
-
     home_page_nuevo.buscar_producto(nombre_producto)
     home_page_nuevo.obtener_informacion_producto()
-    time.sleep(5)
-    driver.quit()
+    

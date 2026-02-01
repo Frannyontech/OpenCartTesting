@@ -23,7 +23,6 @@ class HomePage_ProductPage(BasePage):
 
     def buscar_producto(self):
         self.esperar_carga_completa(self.locators["select_producto"])
-        print(f"elemento encontrado")
         self.esperar_elemento_clickable(self.locators["select_producto"]).click()
 
     def obtener_informacion_producto(self):

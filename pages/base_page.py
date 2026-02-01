@@ -48,3 +48,20 @@ class BasePage:
         texto = texto.replace("\xa0", " ")
         texto = " ".join(texto.split())
         return texto if texto else None
+
+    def seleccionar_opcion(self, locator_select, texto):
+        select = Select(self.esperar_carga_completa(locator_select))
+        select.select_by_visible_text(texto)
+
+
+    def click_seguro(self, locator, timeout=120):
+        ele = self.esperar_elemento_clickable(locator, timeout)
+        # scrollea como js
+        self.driver.execute_script(
+            "arguments[0].scrollIntoView({block:'center'});", ele
+        )
+        try:
+            ele.click()
+        except WebDriverException:
+            # fallback por JS
+            self.driver.execute_script("arguments[0].click();", ele)
