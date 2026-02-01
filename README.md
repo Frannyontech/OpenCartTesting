@@ -1,4 +1,4 @@
-# Desafio Tecnico - Automating OpenCart
+# Desafio Tecnico - Automating OpenCart - Francisca Galaz
 
 Este proyecto corresponde a un desafío técnico de automatización End-to-End sobre un ecommerce basado en **OpenCart**, desarrollado en **Python** utilizando **Selenium WebDriver**, **Pytest** y el patrón **Page Object Model (POM)**
 
