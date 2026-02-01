@@ -34,9 +34,14 @@ class BasePage:
     def tab(self):
         ActionChains(self.driver).send_keys("\t").perform()
 
+    def set_text(self, locator, texto, timeout=10):
+        ele = self.esperar_carga_completa(locator, timeout)
+        ele.clear()
+        ele.send_keys(texto)
+
     def obtener_texto(self, locator, timeout=10):
         try:
-            elemento = self.esperar_visibilidad(locator, timeout)
+            elemento = self.esperar_carga_completa(locator, timeout)
             texto = elemento.text or ""
         except (TimeoutException, StaleElementReferenceException):
             return None

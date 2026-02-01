@@ -4,9 +4,15 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 
+from pages.home_page import HomePage_SearchPage
 
-def test_abrir_opencart(base_url):
-    assert base_url, "BASE_URL no está definido en el .env"
+
+def test_buscar_producto(base_url, driver):
+    #variables de busqueda
+    nombre_producto = "mac"
+
+    driver.get(base_url)
+    home_page_nuevo = HomePage_SearchPage(driver)
 
     options = Options()
     options.add_argument("--start-maximized")
@@ -17,6 +23,8 @@ def test_abrir_opencart(base_url):
         service=Service(ChromeDriverManager().install()),
         options=options
     )
-    driver.get(base_url)
+
+    home_page_nuevo.buscar_producto(nombre_producto)
+    home_page_nuevo.obtener_informacion_producto()
     time.sleep(5)
     driver.quit()
