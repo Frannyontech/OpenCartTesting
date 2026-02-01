@@ -19,6 +19,8 @@ def driver():
     options.add_argument("--start-maximized")
     options.add_argument("--ignore-certificate-errors")
     options.add_argument("--ignore-ssl-errors=yes")
+    options.add_argument("--window-size=1920,1080")
+
 
     driver = webdriver.Chrome(options=options)
     yield driver
